@@ -1,12 +1,12 @@
-let b1 = window.document.getElementById("b1")
-let b2 = window.document.getElementById("b2")
-let b3 = window.document.getElementById("b3")
-let b4 = window.document.getElementById("b4")
-let b5 = window.document.getElementById("b5")
-let b6 = window.document.getElementById("b6")
-let b7 = window.document.getElementById("b7")
-let b8 = window.document.getElementById("b8")
-let b9 = window.document.getElementById("b9")
+let b1
+let b2
+let b3
+let b4
+let b5
+let b6
+let b7
+let b8
+let b9
 
 let oScore = 0
 let xScore = 0

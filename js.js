@@ -1,103 +1,86 @@
+let b1 = document.getElementById("b1")
+let b2 = document.getElementById("b2")
+let b3 = document.getElementById("b3")
+let b4 = document.getElementById("b4")
+let b5 = document.getElementById("b5")
+let b6 = document.getElementById("b6")
+let b7 = document.getElementById("b7")
+let b8 = document.getElementById("b8")
+let b9 = document.getElementById("b9")
+
+let oScore = 0
+let xScore = 0
+let iteration = 0
+
+const valueField = new Map ([
+    ['b1', 1],
+    ['b2', 2],
+    ['b3', 3],
+    ['b4', 10],
+    ['b5', 20],
+    ['b6', 30],
+    ['b7', 100],
+    ['b8', 200],
+    ['b9', 300],
+])
+
+const succsesValueSet = new Set([6, 60, 600, 111, 222, 333, 321, 123])
+
+const unblockField = (node) => {
+    node.forEach((item) => item.disabled = false)
+}
+
+const startGame = () => {
+    b1 = document.getElementById("b1")
+    b2 = document.getElementById("b2")
+    b3 = document.getElementById("b3")
+    b4 = document.getElementById("b4")
+    b5 = document.getElementById("b5")
+    b6 = document.getElementById("b6")
+    b7 = document.getElementById("b7")
+    b8 = document.getElementById("b8")
+    b9 = document.getElementById("b9")
+    unblockField([b1,b2,b3,b4,b5,b6,b7,b8,b9])
+}
 function myfunc() {
-var b1, b2, b3, b4, b5, b6, b7, b8, b9;
-b1 = document.getElementById("b1").value
-b1 = document.getElementById("b2").value
-b1 = document.getElementById("b3").value
-b1 = document.getElementById("b4").value
-b1 = document.getElementById("b5").value
-b1 = document.getElementById("b6").value
-b1 = document.getElementById("b7").value
-b1 = document.getElementById("b8").value
-b1 = document.getElementById("b9").value
-
-if (b1.toLowerCase() == 'x' && b2.toLowerCase() == 'x' && b3.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b4.toLowerCase() == 'x' && b5.toLowerCase() == 'x' && b6.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b7.toLowerCase() == 'x' && b8.toLowerCase() == 'x' && b9.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b1.toLowerCase() == 'x' && b4.toLowerCase() == 'x' && b7.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b2.toLowerCase() == 'x' && b5.toLowerCase() == 'x' && b8.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b3.toLowerCase() == 'x' && b6.toLowerCase() == 'x' && b9.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b1.toLowerCase() == 'x' && b5.toLowerCase() == 'x' && b9.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b3.toLowerCase() == 'x' && b5.toLowerCase() == 'x' && b7.toLowerCase() == 'x') {
-    window.alert('You are a winner');
-    reset();
-}
-
-if (b1.toLowerCase() == 'o' && b2.toLowerCase() == 'o' && b3.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b4.toLowerCase() == 'o' && b5.toLowerCase() == 'o' && b6.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b7.toLowerCase() == 'o' && b8.toLowerCase() == 'o' && b9.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b1.toLowerCase() == 'o' && b4.toLowerCase() == 'o' && b7.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b2.toLowerCase() == 'o' && b5.toLowerCase() == 'o' && b8.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b3.toLowerCase() == 'o' && b6.toLowerCase() == 'o' && b9.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b1.toLowerCase() == 'o' && b5.toLowerCase() == 'o' && b9.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
-else if (b3.toLowerCase() == 'o' && b5.toLowerCase() == 'o' && b7.toLowerCase() == 'o') {
-    window.alert('You are a winner');
-    reset();
-}
+    iteration+=1;
+    const xWin = succsesValueSet.has(xScore)
+    const oWin = succsesValueSet.has(oScore)
+    if (xWin || oWin){
+        window.alert(`${xWin? 'X player': 'O player'} are a winner`);
+        reset();
+    } else if (iteration === 9){
+        window.alert('Nobody are a winner');
+        reset();
+    }
 }
 
 function reset() {
+    if (!b1) {
+        startGame()
+    }
+    b1.value = " ";
+    b2.value = " ";
+    b3.value = " ";
+    b4.value = " ";
+    b5.value = " ";
+    b6.value = " ";
+    b7.value = " ";
+    b8.value = " ";
+    b9.value = " ";
     location.reload();
-    document.getElementById("b1").value = " ";
-    document.getElementById("b2").value = " ";
-    document.getElementById("b3").value = " ";
-    document.getElementById("b4").value = " ";
-    document.getElementById("b5").value = " ";
-    document.getElementById("b6").value = " ";
-    document.getElementById("b7").value = " ";
-    document.getElementById("b8").value = " ";
-    document.getElementById("b9").value = " ";
 }
 
 let flag = 1;
 function setValue() {
-    if (flag == 1) {
+    if (flag === 1) {
         this.value = "X";
         this.disabled = true;
         flag = 0;
+        xScore += valueField.get(this.id);
     }
     else {
+        oScore += valueField.get(this.id);
         this.value = "O";
         this.disabled = true;
         flag = 1;

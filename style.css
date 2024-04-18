@@ -20,9 +20,9 @@ h1 {
     font-size: 14px;
     text-align: center;
 }
-#but {
+button {
     box-sizing: border-box;
-    width: 70px;
+    width: 170px;
     height: 30px;
     border: aqua;
     margin: auto;
@@ -33,6 +33,13 @@ h1 {
     font-size: 14px;
     cursor: auto;
 }
+
+.buttonPane {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
 #print {
     font-family: Geneva;
     color: tomato;
@@ -41,6 +48,14 @@ h1 {
 
 #main {
     text-align: center;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main .inputBlock input{
+    width: 300px;
 }
 
 body {

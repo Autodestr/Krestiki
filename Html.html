@@ -15,23 +15,28 @@
   <body>
     <div id="main">
         <h1>Крестики-нолики</h1>
-        <br><br>
-        <input type="text" id="b1" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b2" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b3" onclick="setValue.apply(this); myfunc();" readonly>
-        <br><br>
-        <input type="text" id="b4" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b5" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b6" onclick="setValue.apply(this); myfunc();" readonly>
-        <br><br>
-        <input type="text" id="b7" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b8" onclick="setValue.apply(this); myfunc();" readonly>
-        <input type="text" id="b9" onclick="setValue.apply(this); myfunc();" readonly>
-        <br><br> <br>
+        <div class="inputBlock">
+        <input type="text" id="b1"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b2"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b3"  onclick="setValue.apply(this); myfunc();" readonly>
+        </div>
+        <div class="inputBlock">
+        <input type="text" id="b4"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b5"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b6"  onclick="setValue.apply(this); myfunc();" readonly>
+        </div>
+    <div class="inputBlock">
+        <input type="text" id="b7"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b8"  onclick="setValue.apply(this); myfunc();" readonly>
+        <input type="text" id="b9"  onclick="setValue.apply(this); myfunc();" readonly>
+    </div>
+        <div class="buttonPane">
+<!--            <button id="start" onclick="startGame()">Start</button>-->
         <button id="but" onclick="reset()">
         Reset</button>
+        </div>
         <br><br>
-        <p id="print"></p>
+        <p id="pri</p>
     </div>
   </body>
 
